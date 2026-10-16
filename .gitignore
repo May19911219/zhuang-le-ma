@@ -1,0 +1,16 @@
+node_modules/
+dist/
+out/
+.vite/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.env.*
+!.env.example
+*.env.txt
+server.env.txt
+server/data/*.db
+*.log
+.DS_Store
+Thumbs.db

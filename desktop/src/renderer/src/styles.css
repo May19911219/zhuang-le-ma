@@ -1,0 +1,272 @@
+@import "tailwindcss";
+@import "highlight.js/styles/github.css";
+
+@theme {
+  --font-display: "ZCOOL KuaiLe", "Comic Sans MS", cursive;
+  --font-sans: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+:root {
+  color: #243037;
+  background: #e4eef2;
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(#d5e3ea 1px, transparent 1px) 0 0 / 100% 28px,
+    #e4eef2;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.page {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.slogan {
+  display: inline-block;
+  margin: 0;
+  padding: 14px 18px 12px;
+  background: #ffe14a;
+  border: 2px solid #1b3a4b;
+  box-shadow: 4px 4px 0 #1b3a4b;
+  transform: rotate(-2deg);
+  animation: stamp-in 0.45s ease-out both;
+}
+
+.slogan h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1b3a4b;
+}
+
+.brand {
+  margin: 0 0 2px;
+  font-size: 14px;
+}
+
+.platforms {
+  display: flex;
+  gap: 8px;
+}
+
+.platforms button[aria-pressed="true"] {
+  background: #1b3a4b;
+  color: #f4f8f8;
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+  margin: 28px 0 18px;
+  align-items: center;
+}
+
+.search button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.stickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.sticker {
+  border: 2px solid #1b3a4b;
+  background: #f7fbfc;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.sticker:nth-child(4n + 1) { transform: rotate(-2deg); }
+.sticker:nth-child(4n + 2) { transform: rotate(1.5deg); }
+.sticker:nth-child(4n + 3) { transform: rotate(-1deg); }
+.sticker:nth-child(4n) { transform: rotate(2deg); }
+
+.sticker[aria-pressed="true"] {
+  background: #ffe14a;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.versions,
+.notebook,
+.log,
+.feedback {
+  background: #f7fbfc;
+  border: 1px solid #1b3a4b;
+}
+
+.versions {
+  padding: 14px;
+}
+
+.versions h2,
+.notebook h2,
+.log h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.version-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.version-list button {
+  text-align: left;
+  border: 1px solid #1b3a4b;
+  background: white;
+  padding: 8px 10px;
+}
+
+.version-list button[aria-pressed="true"] {
+  background: #1b3a4b;
+  color: white;
+}
+
+.notebook {
+  padding: 8px 18px 18px 28px;
+  border-left: 3px solid #e23d3d;
+  min-height: 420px;
+  min-width: 0;
+}
+
+.markdown {
+  max-width: 68ch;
+  line-height: 1.7;
+}
+
+.markdown h1,
+.markdown h2 {
+  font-size: 1.15rem;
+  margin: 1.1rem 0 0.4rem;
+}
+
+.markdown pre {
+  margin: 0;
+  overflow: auto;
+  background: #f4f8fa !important;
+}
+
+.code-shell {
+  position: relative;
+  margin: 12px 0;
+  max-width: 100%;
+  border: 1px solid #1b3a4b;
+}
+
+.copy-code {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px solid #1b3a4b;
+  background: #ffe14a;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.log {
+  margin-top: 18px;
+  padding: 14px;
+}
+
+.log pre {
+  margin: 0;
+  min-height: 72px;
+  max-height: 220px;
+  overflow: auto;
+  white-space: pre-wrap;
+  background: #10242e;
+  color: #e7f2f6;
+  padding: 12px;
+}
+
+.feedback {
+  margin-top: 12px;
+  padding: 14px;
+}
+
+.note {
+  color: #35515f;
+}
+
+.error {
+  color: #e23d3d;
+}
+
+@keyframes stamp-in {
+  from {
+    transform: translateY(-14px) rotate(-8deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(-2deg);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slogan {
+    animation: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .top,
+  .search,
+  .workspace {
+    display: block;
+  }
+
+  .platforms,
+  .search {
+    margin-top: 16px;
+  }
+
+  .slogan h1 {
+    font-size: 32px;
+  }
+
+  .versions {
+    margin-bottom: 12px;
+  }
+}

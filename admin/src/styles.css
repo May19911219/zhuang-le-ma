@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "ZCOOL KuaiLe", cursive;
+  --font-sans: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #e4eef2;
+  color: #243037;
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.wrap {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.stamp {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  background: #ffe14a;
+  border: 2px solid #1b3a4b;
+  box-shadow: 4px 4px 0 #1b3a4b;
+  transform: rotate(-1.5deg);
+}
+
+.stamp h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  color: #1b3a4b;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tabs button[aria-pressed="true"] {
+  background: #1b3a4b;
+  color: #f4f8fa;
+}
+
+.panel {
+  background: #f7fbfc;
+  border: 1px solid #1b3a4b;
+  padding: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid #c5d5de;
+  text-align: left;
+  padding: 8px 6px;
+  vertical-align: top;
+}
+
+.login {
+  display: flex;
+  gap: 8px;
+  max-width: 520px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #1b3a4b;
+  background: white;
+  padding: 8px;
+  color: #243037;
+}
+
+textarea {
+  min-height: 220px;
+  font-family: Consolas, "Noto Sans SC", monospace;
+}
+
+.error {
+  color: #e23d3d;
+}
+
+.editor {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
